@@ -1,0 +1,40 @@
+{
+  "name": "mern-auth",
+  "version": "1.0.0",
+  "description": "MERN authentication flow",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ABSphreak/mern-auth.git"
+  },
+  "keywords": [
+    "MERN",
+    "Auth",
+    "JWT"
+  ],
+  "author": "Abhinav Sharma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ABSphreak/mern-auth/issues"
+  },
+  "homepage": "https://github.com/ABSphreak/mern-auth#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.25",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
