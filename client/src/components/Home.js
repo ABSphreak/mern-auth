@@ -19,6 +19,7 @@ const Home = (props) => {
     <main className={classes.content}>
       <div className={classes.seperator} />
       <Typography variant="h3">Home</Typography>
+      <div className={classes.seperator} />
       <Typography paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus

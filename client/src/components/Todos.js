@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 import TodoService from "../services/TodoService";
 import { AuthContext } from "../context/AuthContext";
 import Message from "./Message";
-import { Typography, Grid } from "@material-ui/core";
+import { Typography, Grid, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -40,7 +40,9 @@ const Todos = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log(e);
     TodoService.postTodo(todo).then((data) => {
+      console.log(data);
       const { message } = data;
       resetForm();
       if (!message.msgError) {
@@ -69,13 +71,17 @@ const Todos = (props) => {
   return (
     <main className={classes.content}>
       <div className={classes.seperator} />
+      <Typography variant="h4">All Todos</Typography>
+      <div className={classes.seperator} />
       <Grid container className={classes.root} spacing={2}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={4}>
             {todos.map((todo) => {
               return (
                 <Grid key={todo._id} item>
-                  <TodoItem key={todo._id} todo={todo} />
+                  <Paper elevation={5}>
+                    <TodoItem key={todo._id} todo={todo} />
+                  </Paper>
                 </Grid>
               );
             })}
@@ -83,23 +89,21 @@ const Todos = (props) => {
         </Grid>
       </Grid>
       <br />
-      <div>
-        <form onSubmit={onSubmit}>
-          <label htmlFor="todo">Enter Todo:</label>
-          <input
-            type="text"
-            name="todo"
-            value={todo.name}
-            onChange={onChange}
-            className="form-control"
-            placeholder="Enter Todo"
-          />
-          <button className="btn btn-lg btn-primary btn-block" type="button">
-            Submit
-          </button>
-        </form>
-        {message ? <Message message={message} /> : null}
-      </div>
+      <form onSubmit={onSubmit}>
+        <label htmlFor="todo">Enter Todo:</label>
+        <input
+          type="text"
+          name="todo"
+          value={todo.name}
+          onChange={onChange}
+          className="form-control"
+          placeholder="Enter Todo"
+        />
+        <button className="btn btn-lg btn-primary btn-block" type="button">
+          Submit
+        </button>
+      </form>
+      {message ? <Message message={message} /> : null}
     </main>
   );
 };

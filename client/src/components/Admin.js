@@ -19,6 +19,7 @@ const Admin = (props) => {
     <main className={classes.content}>
       <div className={classes.seperator} />
       <Typography variant="h3">Admin</Typography>
+      <div className={classes.seperator} />
       <Typography paragraph>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, veritatis
         repudiandae? Nobis pariatur dolorem deleniti aliquid non maiores vitae
