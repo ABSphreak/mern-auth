@@ -40,7 +40,7 @@
 2. `npm start` → Runs the server in production mode.</br>
    _(Mostly going to be used for deployment to cloud)_
 
-### ⫸ `client` (frontend)
+#### ⫸ `client` (frontend)
 
 1. `npm start` → Invokes `react-scripts start`.
 2. `npm build` → Invokes `react-scripts build`.
